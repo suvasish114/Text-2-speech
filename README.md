@@ -3,20 +3,18 @@
 A web based application using python and flask to convert text into speech.
 
 ## How to run
-----
 
-- clone the project in your local directory.
-- now run the following command. (make sure you have [python](https://python.org) 3.X pre-installed in your machine)
+- Clone the project in your local directory.
+- Now run the following command. (make sure you have [python](https://python.org) 3.X pre-installed in your machine)
 ```sh
     python run.py
 ```
-- now go the following port in your browser.
+- Go the following port in your browser.
 ```sh
     http://127.0.0.1:5000/
 ```
 
 ## Screenshots
-
 | | |
 |-|-|
 |before|after|
@@ -24,9 +22,8 @@ A web based application using python and flask to convert text into speech.
 
 
 ## Contribution
-----
 
-- Fork this in your account.
+- Fork this mini-project in your account.
 - Make some changes.
 - Commit and make a pull request.
 
