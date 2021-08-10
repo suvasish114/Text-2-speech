@@ -9,7 +9,7 @@ A web based application using python and flask to convert text into speech.
 ```sh
     python run.py
 ```
-- Go the following port in your browser.
+- Go to the following port in your browser.
 ```sh
     http://127.0.0.1:5000/
 ```
