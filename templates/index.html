@@ -41,36 +41,35 @@
         }
     </style>
 </head>
-<div class="p-3 container">
-    <h1 align="center">Text 2 Speech</h1>
-    <hr>
-    <div class="p-3 card">
-        <form method="POST">
-            {{ form.hidden_tag() }}
-            <span class="m-2">Select voice:</span>
-            {{ form.voice(class="m-2") }}
-            <br>
-            <span class="m-2">Select speed:</span>
-            {{ form.speed(class="m-2") }}
-            <br>
-            {{ form.text(class="m-2 p-2", placeholder="Enter text", cols=30, rows=5) }}
-            <br>
-            {{ form.generate(class="btn m-2") }}
-        </form>
-    </div>
-    <div class="card my-2 p-3">
-        <h4 class="p-2">Output: </h4>
-        {% if output %}
-        <audio controls>
-            <source src="{{ url_for('static', filename='output.mp3') }}" type="audio/mpeg">
-            <p>Your browser does not support audio element.</p>
-        </audio>
-        {% endif %}
-    </div>
-</div>
 
 <body>
-
+    <div class="p-3 container">
+        <h1 align="center">Text 2 Speech</h1>
+        <hr>
+        <div class="p-3 card">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+                <span class="m-2">Select voice:</span>
+                {{ form.voice(class="m-2") }}
+                <br>
+                <span class="m-2">Select speed:</span>
+                {{ form.speed(class="m-2") }}
+                <br>
+                {{ form.text(class="m-2 p-2", placeholder="Enter text", cols=30, rows=5) }}
+                <br>
+                {{ form.generate(class="btn m-2") }}
+            </form>
+        </div>
+        <div class="card my-2 p-3">
+            <h4 class="p-2">Output: </h4>
+            {% if output %}
+            <audio controls>
+                <source src="{{ url_for('static', filename='output.mp3') }}" type="audio/mpeg">
+                <p>Your browser does not support audio element.</p>
+            </audio>
+            {% endif %}
+        </div>
+    </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
