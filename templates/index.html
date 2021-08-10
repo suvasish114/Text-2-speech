@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <title>Text 2 Speech</title>
+    <style>
+        body {
+            background-color: whitesmoke;
+        }
+
+        h1, h4{
+            font-weight: bolder;
+        }
+        audio{
+            color: dodgerblue;
+        }
+        .card {
+            filter: drop-shadow(1px 1px 1px gray);
+            border: 0px;
+            border-radius: 1px;
+        }
+
+        .btn {
+            background-color: teal;
+            border: 0px;
+            border-radius: 3px;
+            color: white;
+            width: 100px;
+        }
+
+        .btn:hover {
+            background-color: darkcyan;
+            color: white;
+        }
+    </style>
+</head>
+<div class="p-3 container">
+    <h1 align="center">Text 2 Speech</h1>
+    <hr>
+    <div class="p-3 card">
+        <form method="POST">
+            {{ form.hidden_tag() }}
+            <span class="m-2">Select voice:</span>
+            {{ form.voice(class="m-2") }}
+            <br>
+            <span class="m-2">Select speed:</span>
+            {{ form.speed(class="m-2") }}
+            <br>
+            {{ form.text(class="m-2 p-2", placeholder="Enter text", cols=30, rows=5) }}
+            <br>
+            {{ form.generate(class="btn m-2") }}
+        </form>
+    </div>
+    <div class="card my-2 p-3">
+        <h4 class="p-2">Output: </h4>
+        {% if output %}
+        <audio controls>
+            <source src="{{ url_for('static', filename='output.mp3') }}" type="audio/mpeg">
+            <p>Your browser does not support audio element.</p>
+        </audio>
+        {% endif %}
+    </div>
+</div>
+
+<body>
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
